@@ -1,0 +1,29 @@
+Privacy Browser copyright Â© 2015-2021 Soren Stoutner <soren@stoutner.com>.
+
+Due to lack of use, this repository has been discontinued.  I would be happy to begin maintaining it again if there is interest.
+
+<https://www.stoutner.com/discontinuing-privacy-browser-rom-integration/>
+
+<https://www.stoutner.com/privacy-browser/>
+
+Privacy Browser is released under the GPLv3+ license.
+
+<http://www.gnu.org/licenses/gpl-3.0.html>
+
+The source code is available from gitweb.stoutner.com.  The repository can be cloned using the following command:
+
+git clone https://git.stoutner.com/PrivacyBrowserROMIntegration.git
+
+The purpose of this repo is to make it easy to integrate Privacy Browser into ROMs.  It is updated with each release of Privacy Browser.
+
+Feature requests and bug reports can be submitted at https://redmine.stoutner.com/projects/privacy-browser-rom-integration.
+
+To integrate Privacy Browser into a ROM build, add the following lines to the build manifest:
+
+<remote name="stoutner" fetch="https://git.stoutner.com" />
+<project path="external/stoutner/privacy-browser" remote="stoutner" name="PrivacyBrowserROMIntegration.git" revision="master" />
+
+The sample Android.mk file replaces the `Browser` or `Browser2` package from AOSP.
+If you have removed them from your build manifest, you need to add the following statement to your device configuration:
+
+PRODUCT_PACKAGES += privacy-browser
